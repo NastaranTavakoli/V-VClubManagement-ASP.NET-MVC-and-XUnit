@@ -1,0 +1,26 @@
+﻿@model VandVCLubManagementSystem.Models.ViewModels.Member.Edit
+
+@{
+    ViewData["Title"] = "Confirm Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>PhoneNumber</th><th>Date Of Birth</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.FullName</td>
+            <td>@Model.Email</td>
+            <td>@Model.PhoneNumber</td>
+            <td>@Model.DateOfBirth.ToShortDateString()</td>
+        </tr>
+    </tbody>
+</table>
+<p> Are you sure you want to cancel the membership for this member?</p>
+<form asp-action="Delete" asp-route-id="@Model.Id">
+    <a id="goBackButton" asp-controller="Member" asp-action="Index" class="btn btn-info">Go back</a>
+    <button id="formButton" type="submit" class="btn btn-danger">Yes</button>
+</form>

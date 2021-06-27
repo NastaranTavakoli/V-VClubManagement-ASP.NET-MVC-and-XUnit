@@ -1,0 +1,118 @@
+﻿@model VandVCLubManagementSystem.Models.ViewModels.Member.Index
+
+
+<div class="d-flex justify-content-between">
+    <h2 class="mb-1">Members</h2>
+    <a asp-controller="Member" asp-action="Create" class="btn btn-dark">+ New Member</a>
+</div>
+<hr />
+
+<form method="post" asp-action="Index">
+    <div class="d-flex justify-content-between">
+        <div class="form-check-inline">
+            <div class="form-group">
+                <label asp-for="SearchString"></label>
+                <input class="form-control" asp-for="SearchString" />
+            </div>
+            <button type="submit" class="btn btn-secondary mt-3">Search</button>
+        </div>
+
+        <div class="form-group ">
+            <label asp-for="OrderOptionId"></label>
+            <select id="orderSelector" class="form-control" asp-for="OrderOptionId" asp-items="@Model.OrderOptions">
+            </select>
+        </div>
+    </div>
+    <input id="pageNumberValue" type="hidden" asp-for="PageNumber" />
+
+    @if (Model.People.Count == 0)
+    {
+        <p>No member was found</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr><th>Member</th><th>Email</th><th>More Detail...</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model.People)
+                {
+                    <tr>
+                        <td>
+                            @p.FullName
+                        </td>
+                        <td>
+                            @p.Email
+                        </td>
+                        <td>
+                            <a class="btn btn-info" asp-action="Edit" asp-route-id="@p.Id">View/Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="d-flex justify-content-center">
+        @if (Model.TotalPages > 1)
+        {
+            <button type="submit" id="previousButton" class="@(Model.HasPreviousPage ? "" : "disabled")  m-2 btn btn-link btn-outline-secondary">&laquo; Previous</button>
+
+            if (Model.TotalPages < 5)
+            {
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    <button type="submit" class="m-2 btn-link btn btn-outline-secondary pageNumberLink">@i</button>
+                }
+            }
+            else
+            {
+                @for (var i = Model.PageNumber - 4; i <= Model.PageNumber + 4 && i <= Model.TotalPages; i++)
+                {
+                    <button type="submit" class="p-2 btn btn-link btn-outline-secondary pageNumberLink">@i</button>
+                }
+            }
+
+
+            <button type="submit" id="nextButton" class="@(Model.HasNextPage ? "" : "disabled")  m-2 btn btn-link btn-outline-secondary">Next &raquo;</button>
+        }
+    </div>
+</form>
+
+
+
+
+
+
+
+@section Scripts{
+    <script>
+        document.querySelector("#orderSelector").addEventListener("change",
+            () => {
+                document.querySelector("form").submit();
+            }
+        );
+
+        document.querySelectorAll(".pageNumberLink").forEach(item => item.addEventListener("click",
+            e => {
+                document.querySelector("#pageNumberValue").value = e.target.innerHTML;
+            })
+        );
+
+
+        document.querySelector("#previousButton").addEventListener("click",
+            () => {
+                document.querySelector("#pageNumberValue").innerHTML = @Model.PageNumber - 1;
+
+            }
+        );
+
+
+        document.querySelector("#nextButton").addEventListener("click",
+            () => {
+                document.querySelector("#pageNumberValue").innerHTML = @Model.PageNumber + 1;
+            }
+        );
+    </script>
+}

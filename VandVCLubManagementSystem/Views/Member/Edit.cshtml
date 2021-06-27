@@ -1,0 +1,68 @@
+﻿@model VandVCLubManagementSystem.Models.ViewModels.Member.Edit
+
+<div class="row">
+    <h2 class="col-4">Current Details</h2>
+    <h2 class="col-8">New Details</h2>
+</div>
+<hr />
+
+
+<div class="row">
+    <form class="col-4">
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <input readonly class="form-control" asp-for="FirstName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input readonly class="form-control" asp-for="LastName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input readonly class="form-control" asp-for="Email" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber"></label>
+            <input readonly class="form-control" asp-for="PhoneNumber" />
+        </div>
+        <div class="form-group">
+            <label asp-for="DateOfBirth"></label>
+            <input readonly class="form-control" asp-for="DateOfBirth" />
+        </div>
+    </form>
+    <form class="col-8 pr-5" asp-action="Edit">
+    <div class="form-group">
+                <label asp-for="FirstName">First Name</label>
+                <input class="form-control" asp-for="FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger">*</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName">Last Name</label>
+                <input class="form-control" asp-for="LastName" />
+                <span asp-validation-for="LastName" class="text-danger">*</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger">*</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber"></label>
+                <input class="form-control" asp-for="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber" class="text-danger">*</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth"></label>
+                <input class="form-control" asp-for="DateOfBirth" min="@DateTime.Today.AddYears(-100).ToString("yyyy-MM-dd")"/>
+                <span asp-validation-for="DateOfBirth" class="text-danger">*</span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <a class="btn btn-info font-weight-bolder" asp-route-id="@Model.Id" asp-action="Index">
+                &#10096;
+            </a>
+            <button type="submit" class="btn btn-info">Update</button>
+
+                <a id="cancelMembershipLink" class="btn btn-danger" asp-action="DeleteConfirmation" asp-route-id="@Model.Id">Cancel Membership</a>
+            <div asp-validation-summary="All"></div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+﻿@model VandVCLubManagementSystem.Models.ViewModels.Member.Create
+@{
+    ViewData["Title"] = "Member Added";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+    <tr><th>Name</th><th>Email</th><th>PhoneNumber</th><th>Date Of Birth</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>@Model.FullName</td>
+        <td>@Model.Email</td>
+        <td>@Model.PhoneNumber</td>
+        <td>@Model.DateOfBirth.ToShortDateString()</td>
+    </tr>
+    </tbody>
+</table>
+<a class="btn btn-info" asp-controller="Member" asp-action="Index">Back</a>

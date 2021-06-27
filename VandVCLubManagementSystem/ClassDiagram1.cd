@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VandVCLubManagementSystem.Controllers.HomeController">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAQAAAAAAAAAAIAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Controllers.MemberController">
+    <Position X="8.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAhAAAAAABAAAAAAEAAEACIAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\MemberController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Models.Person">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAIAAAAAAQAAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Models.ViewModels.Member.Create">
+    <Position X="3.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAIAAAAAAQAAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\ViewModels\Member\Create.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Models.ViewModels.Member.Edit">
+    <Position X="1.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAACAAAIAAAAAAQAAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\ViewModels\Member\Edit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Models.ViewModels.Member.Index">
+    <Position X="6" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAgAAIIAAAAAAAAAAAAAUAAAAgAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\ViewModels\Member\Index.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Models.ApplicationDbContext">
+    <Position X="11.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.AspNetCore.Mvc.Controller" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.EntityFrameworkCore.DbContext" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Program">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VandVCLubManagementSystem.Startup">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
